@@ -86,7 +86,7 @@
 #include "mavlink_shell.h"
 #include "mavlink_ulog.h"
 
-#define DEFAULT_BAUD_RATE       57600
+#define DEFAULT_BAUD_RATE       921600
 #define DEFAULT_DEVICE_NAME     "/dev/ttyS1"
 
 #define HASH_PARAM              "_HASH_CHECK"
@@ -585,7 +585,7 @@ private:
 
 	int			_uart_fd{-1};
 
-	int			_baudrate{57600};
+	int			_baudrate{921600};
 	int			_datarate{1000};		///< data rate for normal streams (attitude, position, etc.)
 	float			_rate_mult{1.0f};
 	float			_high_latency_freq{0.015f};	///< frequency of HIGH_LATENCY2 stream
