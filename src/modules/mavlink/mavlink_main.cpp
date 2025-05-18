@@ -1482,7 +1482,7 @@ Mavlink::configure_streams_to_default(const char *configure_single_stream)
 		// Note: streams requiring low latency come first
 		configure_stream_local("TIMESYNC", 10.0f);
 		configure_stream_local("CAMERA_TRIGGER", unlimited_rate);
-		configure_stream_local("HIGHRES_IMU", 50.0f);
+		configure_stream_local("HIGHRES_IMU", 600.0f);
 		configure_stream_local("LOCAL_POSITION_NED", 30.0f);
 		configure_stream_local("ATTITUDE", 100.0f);
 		configure_stream_local("ALTITUDE", 10.0f);
@@ -2342,7 +2342,7 @@ Mavlink::task_main(int argc, char *argv[])
 
 	while (!should_exit()) {
 		/* main loop */
-		px4_usleep(_main_loop_delay);
+		px4_usleep(_main_loop_delay / 2);
 
 		if (!should_transmit()) {
 			check_requested_subscriptions();
